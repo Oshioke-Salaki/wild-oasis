@@ -14,6 +14,7 @@ import { useEditCabin } from './useEditCabin';
 function CreateCabinForm({ cabinToEdit = {} }) {
   const { isCreating, createCabin } = useCreateCabin();
   const { isEditing, editCabin } = useEditCabin();
+
   const isWorking = isCreating || isEditing;
 
   // Check if we are editing or creating a cabin

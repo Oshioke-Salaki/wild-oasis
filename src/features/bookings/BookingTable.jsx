@@ -1,5 +1,5 @@
 // import styled from 'styled-components';
-// import BookingRow from './BookingRow';
+import BookingRow from './BookingRow';
 import Spinner from '../../ui/Spinner';
 import Table from '../../ui/Table';
 import { useBookings } from './useBookings';
@@ -55,12 +55,12 @@ function BookingTable() {
           ))} */}
 
         {/* Render props! */}
-        {/* <Table.Body
+        <Table.Body
           data={bookings}
           render={(booking) => (
             <BookingRow key={booking.id} booking={booking} />
           )}
-        /> */}
+        />
 
         {/* <Table.Footer>
           <Pagination count={count} />

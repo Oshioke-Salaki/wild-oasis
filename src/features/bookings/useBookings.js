@@ -10,7 +10,7 @@ export function useBookings() {
   const filter =
     !filterValue || filterValue === 'all'
       ? null
-      : { field: 'status', value: filterValue };
+      : { field: 'status', value: filterValue, method: 'eq' };
 
   const {
     isLoading,

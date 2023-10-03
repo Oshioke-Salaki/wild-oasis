@@ -6,7 +6,7 @@ import {
   // HiTrash,
   HiEye,
   // HiArrowUpOnSquare,
-  // HiArrowDownOnSquare,
+  HiArrowDownOnSquare,
 } from 'react-icons/hi2';
 
 import Tag from '../../ui/Tag';
@@ -124,6 +124,14 @@ function BookingRow({
           >
             See details
           </Menus.Button>
+          {status === 'unconfirmed' && (
+            <Menus.Button
+              icon={<HiArrowDownOnSquare />}
+              onClick={() => navigate(`/checkin/${bookingId}`)}
+            >
+              Check In
+            </Menus.Button>
+          )}
         </Menus.List>
       </Menus.Menu>
     </Table.Row>

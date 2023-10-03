@@ -68,8 +68,8 @@ function CheckinBooking() {
   // We return a fragment so that these elements fit into the page's layout
   return (
     <>
-      <Row type='horizontal'>
-        <Heading type='h1'>Check in booking #{bookingId}</Heading>
+      <Row type="horizontal">
+        <Heading type="h1">Check in booking #{bookingId}</Heading>
         <ButtonText onClick={moveBack}>&larr; Back</ButtonText>
       </Row>
 
@@ -84,7 +84,7 @@ function CheckinBooking() {
               setAddBreakfast((add) => !add);
               setConfirmPaid(false);
             }}
-            id='breakfast'
+            id="breakfast"
           >
             Want to add breakfast for {formatCurrency(optionalBreakfastPrice)}?
           </Checkbox>
@@ -97,7 +97,7 @@ function CheckinBooking() {
           onChange={() => setConfirmPaid((confirm) => !confirm)}
           // If the guest has already paid online, we can't even undo this
           disabled={isCheckingIn || confirmPaid}
-          id='confirm'
+          id="confirm"
         >
           I confirm that {guests.fullName} has paid the total amount of{' '}
           {!addBreakfast
@@ -114,7 +114,7 @@ function CheckinBooking() {
         <Button onClick={handleCheckin} disabled={isCheckingIn || !confirmPaid}>
           Check in booking #{bookingId}
         </Button>
-        <Button variation='secondary' onClick={moveBack}>
+        <Button variation="secondary" onClick={moveBack}>
           Back
         </Button>
       </ButtonGroup>

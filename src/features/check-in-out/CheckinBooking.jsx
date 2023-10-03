@@ -1,26 +1,29 @@
 import { useEffect, useState } from 'react';
-import { formatCurrency } from 'utils/helpers';
+import { formatCurrency } from '../../utils/helpers';
 
-import Spinner from 'ui/Spinner';
-import Row from 'ui/Row';
-import Heading from 'ui/Heading';
-import ButtonGroup from 'ui/ButtonGroup';
-import Button from 'ui/Button';
-import ButtonText from 'ui/ButtonText';
-import Checkbox from 'ui/Checkbox';
+import Spinner from '../../ui/Spinner';
+import Row from '../../ui/Row';
+import Heading from '../../ui/Heading';
+import ButtonGroup from '../../ui/ButtonGroup';
+import Button from '../../ui/Button';
+import ButtonText from '../../ui/ButtonText';
+import Checkbox from '../../ui/Checkbox';
 
-import BookingDataBox from 'features/bookings/BookingDataBox';
+import BookingDataBox from '../bookings/BookingDataBox';
 
-import { useBooking } from 'features/bookings/useBooking';
-import { useMoveBack } from 'hooks/useMoveBack';
+import { useBooking } from '../bookings/useBooking';
+import { useMoveBack } from '../../hooks/useMoveBack';
 import { useCheckin } from './useCheckin';
 
 import styled from 'styled-components';
-import { box } from 'styles/styles';
-import { useSettings } from 'features/settings/useSettings';
+// import { box } from 'styles/styles';
+import { useSettings } from '../settings/useSettings';
 
 const Box = styled.div`
-  ${box}
+  background-color: var(--color-grey-0);
+  border: 1px solid var(--color-grey-0);
+  border-radius: var(--border-radius-md);
+
   padding: 2.4rem 4rem;
 `;
 

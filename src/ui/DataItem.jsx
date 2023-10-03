@@ -1,4 +1,5 @@
-import styled from "styled-components";
+/* eslint-disable react/prop-types */
+import styled from 'styled-components';
 
 const StyledDataItem = styled.div`
   display: flex;

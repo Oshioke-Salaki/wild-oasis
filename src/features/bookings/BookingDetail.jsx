@@ -17,6 +17,7 @@ import { useMoveBack } from '../../hooks/useMoveBack';
 import { useCheckout } from '../check-in-out/useCheckout';
 import ButtonText from '../../ui/ButtonText';
 import Empty from '../../ui/Empty';
+import { HiArrowUpOnSquare } from 'react-icons/hi2';
 
 const HeadingGroup = styled.div`
   display: flex;
@@ -64,7 +65,11 @@ function BookingDetail() {
         )}
 
         {status === 'checked-in' && (
-          <Button onClick={() => checkout(bookingId)} disabled={isCheckingOut}>
+          <Button
+            icon={<HiArrowUpOnSquare />}
+            onClick={() => checkout(bookingId)}
+            disabled={isCheckingOut}
+          >
             Check out
           </Button>
         )}

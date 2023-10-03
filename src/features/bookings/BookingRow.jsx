@@ -5,7 +5,7 @@ import {
   // HiPencil,
   // HiTrash,
   HiEye,
-  // HiArrowUpOnSquare,
+  HiArrowUpOnSquare,
   HiArrowDownOnSquare,
 } from 'react-icons/hi2';
 
@@ -20,6 +20,7 @@ import { formatCurrency } from '../../utils/helpers';
 import { formatDistanceFromNow } from '../../utils/helpers';
 // import { useCheckout } from 'features/check-in-out/useCheckout';
 import { format, isToday } from 'date-fns';
+import { useCheckout } from '../check-in-out/useCheckout';
 
 // v1
 // const TableRow = styled.div`
@@ -79,6 +80,7 @@ function BookingRow({
   // const { mutate: checkout, isLoading: isCheckingOut } = useCheckout();
 
   const navigate = useNavigate();
+  const { checkout, isCheckingOut } = useCheckout();
 
   // We will not allow editing at this point, as it's too complex for bookings... People just need to delete a booking and create a new one
 
@@ -129,7 +131,16 @@ function BookingRow({
               icon={<HiArrowDownOnSquare />}
               onClick={() => navigate(`/checkin/${bookingId}`)}
             >
-              Check In
+              Check in
+            </Menus.Button>
+          )}
+          {status === 'checked-in' && (
+            <Menus.Button
+              icon={<HiArrowUpOnSquare />}
+              onClick={() => checkout(bookingId)}
+              disabled={isCheckingOut}
+            >
+              Check out
             </Menus.Button>
           )}
         </Menus.List>

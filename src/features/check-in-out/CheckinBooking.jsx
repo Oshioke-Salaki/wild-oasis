@@ -32,7 +32,7 @@ function CheckinBooking() {
   const [addBreakfast, setAddBreakfast] = useState(false);
 
   const { booking, isLoading } = useBooking();
-  const { mutate: checkin, isLoading: isCheckingIn } = useCheckin();
+  const { checkin, isCheckingIn } = useCheckin();
   const moveBack = useMoveBack();
   const { isLoading: isLoadingSettings, settings } = useSettings();
 

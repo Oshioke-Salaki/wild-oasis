@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styled from 'styled-components';
 import { format } from 'date-fns';
 
@@ -152,13 +153,13 @@ function BookingDataBox({ booking }) {
         {observations && (
           <DataItem
             icon={<HiOutlineChatBubbleBottomCenterText />}
-            label='Observations'
+            label="Observations"
           >
             {observations}
           </DataItem>
         )}
 
-        <DataItem icon={<HiOutlineCheckCircle />} label='Breakfast included?'>
+        <DataItem icon={<HiOutlineCheckCircle />} label="Breakfast included?">
           {hasBreakfast ? 'Yes' : 'No'}
         </DataItem>
 

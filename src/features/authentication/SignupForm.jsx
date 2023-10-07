@@ -16,7 +16,7 @@ function SignupForm() {
     signup(
       { fullName, email, password },
       {
-        onSettled: reset,
+        onSettled: () => reset(),
       }
     );
   }
@@ -27,6 +27,7 @@ function SignupForm() {
         <Input
           type="text"
           id="fullName"
+          disabled={isLoading}
           {...register('fullName', { required: 'This field is required' })}
         />
       </FormRow>
@@ -35,6 +36,7 @@ function SignupForm() {
         <Input
           type="email"
           id="email"
+          disabled={isLoading}
           {...register('email', {
             required: 'This field is required',
             pattern: {
@@ -52,6 +54,7 @@ function SignupForm() {
         <Input
           type="password"
           id="password"
+          disabled={isLoading}
           {...register('password', {
             required: 'This field is required',
             minLength: {
@@ -66,6 +69,7 @@ function SignupForm() {
         <Input
           type="password"
           id="passwordConfirm"
+          disabled={isLoading}
           {...register('passwordConfirm', {
             required: 'This field is required',
             validate: (value) =>
@@ -76,7 +80,7 @@ function SignupForm() {
 
       <FormRow>
         {/* type is an HTML attribute! */}
-        <Button variation="secondary" type="reset">
+        <Button variation="secondary" type="reset" disabled={isLoading}>
           Cancel
         </Button>
         <Button disabled={isLoading}>Create new user</Button>

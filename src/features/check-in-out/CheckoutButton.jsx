@@ -1,15 +1,16 @@
-import Button from 'ui/Button';
+/* eslint-disable react/prop-types */
+import Button from '../../ui/Button';
 import { useCheckout } from './useCheckout';
 
 function CheckoutButton({ bookingId }) {
-  const { isLoading, mutate: checkout } = useCheckout();
+  const { isCheckingOut, checkout } = useCheckout();
 
   return (
     <Button
-      variation='primary'
-      size='small'
+      variation="primary"
+      size="small"
       onClick={() => checkout(bookingId)}
-      disabled={isLoading}
+      disabled={isCheckingOut}
     >
       Check out
     </Button>

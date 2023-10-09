@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import {
   HiOutlineBriefcase,
   HiOutlineCalendarDays,
   HiOutlineBanknotes,
   HiOutlineChartBar,
 } from 'react-icons/hi2';
-import { formatCurrency } from 'utils/helpers';
+import { formatCurrency } from '../../utils/helpers';
 import Stat from './Stat';
 
 function Stats({ bookings, confirmedStays, numDays, cabinCount }) {
@@ -27,27 +28,27 @@ function Stats({ bookings, confirmedStays, numDays, cabinCount }) {
     <>
       <Stat
         icon={<HiOutlineBriefcase />}
-        title='Bookings'
+        title="Bookings"
         value={numBookings}
-        color='blue'
+        color="blue"
       />
       <Stat
         icon={<HiOutlineBanknotes />}
-        title='Sales'
+        title="Sales"
         value={formatCurrency(sales)}
-        color='green'
+        color="green"
       />
       <Stat
         icon={<HiOutlineCalendarDays />}
-        title='Check ins'
+        title="Check ins"
         value={checkins}
-        color='indigo'
+        color="indigo"
       />
       <Stat
         icon={<HiOutlineChartBar />}
-        title='Occupancy rate'
+        title="Occupancy rate"
         value={Math.round(occupation * 100) + '%'}
-        color='yellow'
+        color="yellow"
       />
     </>
   );

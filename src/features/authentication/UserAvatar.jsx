@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import useUserHook from './useUserHook';
+import { useUserHook } from './useUserHook';
 
 const StyledUserAvatar = styled.div`
   display: flex;
